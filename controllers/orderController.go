@@ -4,7 +4,6 @@ import (
 	"Assignment2/database"
 	"Assignment2/models"
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 
@@ -57,6 +56,7 @@ func UpdateOrder(ctx *gin.Context) {
 	db := database.GetDB()
 	order := models.Order{}
 	order_id := ctx.Param("orderId")
+	orders := []models.Order{}
 
 	if err := ctx.ShouldBindJSON(&order); err != nil {
 		ctx.AbortWithError(http.StatusBadRequest, err)
@@ -66,19 +66,19 @@ func UpdateOrder(ctx *gin.Context) {
 	temp, _ := strconv.Atoi(order_id)
 	order.OrderID = uint(temp)
 
-	err := db.Model(&order).Updates(&order).Error
+	err := db.Where("order_id = ?", order_id).First(&orders).Error
 	if err != nil {
-		log.Println(err.Error())
-		ctx.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
-			"error": err.Error(),
+		ctx.AbortWithStatusJSON(http.StatusNotFound, gin.H{
+			"status":  "Data Not Found",
+			"message": fmt.Sprintf("Order with id %v not found", order_id),
 		})
-		return
+	} else {
+		db.Model(&order).Updates(&order)
+		ctx.JSON(http.StatusCreated, gin.H{
+			"success": true,
+			"result":  order,
+		})
 	}
-
-	ctx.JSON(http.StatusCreated, gin.H{
-		"success": true,
-		"result":  order,
-	})
 
 }
 
