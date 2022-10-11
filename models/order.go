@@ -15,12 +15,6 @@ type Order struct {
 	OrderAt      time.Time `json:"orderAt"`
 }
 
-type FormOrder struct {
-	CustomerName string    `json:"customerName"`
-	OrderedAt    time.Time `json:"orderedAt"`
-	Item         []Item    `json:"items"`
-}
-
 func (o *Order) BeforeCreate(tx *gorm.DB) (err error) {
 	if o.OrderAt.IsZero() {
 		o.OrderAt = time.Now()
