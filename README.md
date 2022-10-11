@@ -11,7 +11,7 @@ go get -u github.com/gin-gonic/gin
 
 # Fitur
 ## Create Order
-Path: [/orders ](http://localhost:8080/orders)
+Path: [http://localhost:8080/orders ](http://localhost:8080/orders)
 
 Method: Post 
 
@@ -39,12 +39,12 @@ Request Body :
 }
 
 ## Get Orders
-Path: [/orders ](http://localhost:8080/orders)
+Path: [http://localhost:8080/orders ](http://localhost:8080/orders)
 
 Method: GET
 
 ## Update Order
-Path: [/orders ](http://localhost:8080/orders/:orderId)
+Path: [http://localhost:8080/orders/:orderId ](http://localhost:8080/orders/:orderId)
 
 Method:  PUT 
 Request Body:
@@ -73,6 +73,6 @@ Request Body:
 }
 
 ## Delete Order
-Path: [/orders ](http://localhost:8080/orders/:orderId)
+Path: [http://localhost:8080/orders/:orderId ](http://localhost:8080/orders/:orderId)
 
 Method: DELETE
