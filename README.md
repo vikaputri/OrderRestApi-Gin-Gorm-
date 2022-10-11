@@ -17,7 +17,10 @@ Method: Post
 
 Request Body :
 
-{ "customerName":"Vika Putri",
+{ 
+    "customerName":"Vika Putri",
+    
+    "orderedAt":"2022-09-09T21:21:46Z",
     
     "items":[
     
@@ -50,9 +53,12 @@ Request Body:
 
     "customerName":"Vika Putri",
     
+    "orderedAt":"2022-10-09T21:21:46Z",
+    
     "items":[
     
         {
+            "LineItemId" : 30
         
             "itemCode":"M00002",
             
