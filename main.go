@@ -7,6 +7,7 @@ import (
 
 func main() {
 	database.StartDB()
-	var PORT = ":8080"
+	//var PORT = ":8080"
+	var PORT = "https://order-rest-api.herokuapp.com/"
 	routers.StartServer().Run(PORT)
 }
