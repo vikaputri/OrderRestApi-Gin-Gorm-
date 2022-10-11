@@ -8,6 +8,6 @@ import (
 func main() {
 	database.StartDB()
 	//var PORT = ":8080"
-	var PORT = ":"
+	var PORT = ""
 	routers.StartServer().Run(PORT)
 }
