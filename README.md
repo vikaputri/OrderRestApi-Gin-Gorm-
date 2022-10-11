@@ -17,9 +17,7 @@ Method: Post
 
 Request Body :
 
-{
-
-    "customerName":"Vika Putri",
+{ "customerName":"Vika Putri",
     
     "items":[
     
