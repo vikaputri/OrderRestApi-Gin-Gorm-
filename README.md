@@ -17,6 +17,7 @@ Method: Post
 
 Request Body :
 
+```
 { 
     "customerName":"Vika Putri",
     
@@ -37,6 +38,7 @@ Request Body :
     ]
     
 }
+```
 
 ## Get Orders
 Path: [http://localhost:8080/orders ](http://localhost:8080/orders)
@@ -49,6 +51,7 @@ Path: [http://localhost:8080/orders/:orderId ](http://localhost:8080/orders/:ord
 Method:  PUT 
 Request Body:
 
+```
 {
 
     "customerName":"Vika Putri",
@@ -71,6 +74,7 @@ Request Body:
     ]
     
 }
+```
 
 ## Delete Order
 Path: [http://localhost:8080/orders/:orderId ](http://localhost:8080/orders/:orderId)
