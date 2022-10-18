@@ -10,20 +10,73 @@ go get gorm.io/driver/postgres
 go get -u github.com/gin-gonic/gin 
 
 # Fitur
-## Register
-Path: [http://localhost:8080/users/register ](http://localhost:8080//users/register)
+## Create Order
+Path: [http://localhost:8080/orders ](http://localhost:8080/orders)
 
-Method: Post
-## Login
-Path: [http://localhost:8080/users/login ](http://localhost:8080//users/login)
+Method: Post 
 
-Method: Post
+Request Body :
 
-## Update User
-Path: [http://localhost:8080/users ](http://localhost:8080//users)
+```
+{ 
+    "customerName":"Vika Putri",
+    
+    "orderedAt":"2022-09-09T21:21:46Z",
+    
+    "items":[
+    
+        {
+        
+            "itemCode":"M00001",
+            
+            "description":"Nasi Goreng",
+            
+            "quantity":1
+            
+        }
+        
+    ]
+    
+}
+```
 
-Method: Put
-## Delete
-Path: [http://localhost:8080/users ](http://localhost:8080//users)
+## Get Orders
+Path: [http://localhost:8080/orders ](http://localhost:8080/orders)
 
-Method: Delte
+Method: GET
+
+## Update Order
+Path: [http://localhost:8080/orders/:orderId ](http://localhost:8080/orders/:orderId)
+
+Method:  PUT 
+Request Body:
+
+```
+{
+
+    "customerName":"Vika Putri",
+    
+    "orderedAt":"2022-10-09T21:21:46Z",
+    
+    "items":[
+    
+        {
+            "LineItemId" : 30
+        
+            "itemCode":"M00002",
+            
+            "description":"Nasi Goreng",
+            
+            "quantity":1
+            
+        }
+        
+    ]
+    
+}
+```
+
+## Delete Order
+Path: [http://localhost:8080/orders/:orderId ](http://localhost:8080/orders/:orderId)
+
+Method: DELETE
